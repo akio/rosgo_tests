@@ -14,6 +14,6 @@ func main() {
     node := ros.NewNode("/listener")
     defer node.Shutdown()
     node.Logger().SetSeverity(ros.LogLevelDebug)
-    node.NewSubscriber("/chatter", rosgo_test.TypeOfHello, callback)
+    node.NewSubscriber("/chatter", rosgo_test.MsgHello, callback)
     node.Spin()
 }

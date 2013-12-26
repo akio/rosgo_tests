@@ -19,7 +19,7 @@ func main() {
     defer node.Shutdown()
     logger := node.Logger()
     logger.SetSeverity(ros.LogLevelDebug)
-    server := node.NewServiceServer("/add_two_ints", rosgo_test.TypeOfAddTwoInts, callback)
+    server := node.NewServiceServer("/add_two_ints", rosgo_test.SrvAddTwoInts, callback)
     if server == nil {
         fmt.Println("Failed to initialize '/add_two_ints' service server")
         os.Exit(1)

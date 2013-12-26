@@ -19,7 +19,7 @@ func main() {
     defer node.Shutdown()
     logger := node.Logger()
     logger.SetSeverity(ros.LogLevelDebug)
-    cli := node.NewServiceClient("/add_two_ints", rosgo_test.TypeOfAddTwoInts)
+    cli := node.NewServiceClient("/add_two_ints", rosgo_test.SrvAddTwoInts)
     defer cli.Shutdown()
     var err error
     var a, b int64

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>rosgo_test</name>
+  <name>rosgo_tests</name>
   <version>0.0.0</version>
   <description>The rosgo_test package</description>
 
