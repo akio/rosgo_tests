@@ -5,7 +5,7 @@ import (
     "fmt"
     "strconv"
     "ros"
-    "rosgo_test"
+    "rosgo_tests"
 )
 
 
@@ -19,7 +19,7 @@ func main() {
     defer node.Shutdown()
     logger := node.Logger()
     logger.SetSeverity(ros.LogLevelDebug)
-    cli := node.NewServiceClient("/add_two_ints", rosgo_test.SrvAddTwoInts)
+    cli := node.NewServiceClient("/add_two_ints", rosgo_tests.SrvAddTwoInts)
     defer cli.Shutdown()
     var err error
     var a, b int64
@@ -35,7 +35,7 @@ func main() {
         fmt.Println()
         os.Exit(1)
     }
-    var srv rosgo_test.AddTwoInts 
+    var srv rosgo_tests.AddTwoInts 
     srv.Request.A = int32(a)
     srv.Request.B = int32(b)
     if err := cli.Call(&srv); err != nil {

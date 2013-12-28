@@ -4,18 +4,18 @@ import (
     "fmt"
     "time"
     "ros"
-    "rosgo_test"
+    "rosgo_tests"
 )
 
 func main() {
     node := ros.NewNode("/talker")
     defer node.Shutdown()
     node.Logger().SetSeverity(ros.LogLevelDebug)
-    pub := node.NewPublisher("/chatter", rosgo_test.MsgHello)
+    pub := node.NewPublisher("/chatter", rosgo_tests.MsgHello)
 
     for node.OK() {
         node.SpinOnce()
-        var msg rosgo_test.Hello
+        var msg rosgo_tests.Hello
         msg.Data = fmt.Sprintf("hello %s", time.Now().String())
         fmt.Println(msg.Data)
         pub.Publish(&msg)

@@ -47,6 +47,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   FILES
   Hello.msg
+  AllFieldTypes.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -64,7 +65,7 @@ add_service_files(
 
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
-#DEPENDENCIES
+  DEPENDENCIES std_msgs
 )
 
 ###################################
