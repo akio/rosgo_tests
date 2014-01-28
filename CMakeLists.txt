@@ -8,7 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   rosgo_core
   rospy
-  std_msgs geometry_msgs sensor_msgs
+  std_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -84,7 +84,7 @@ catkin_package(
 #  DEPENDS system_lib
 )
 
-catkin_rosgo_setup()
+rosgo_setup()
 
 ###########
 ## Build ##
@@ -114,21 +114,22 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
-rosgo_add_executable(test_talker)
-add_dependencies(test_talker rosgo_test_gengo)
-add_dependencies(test_talker std_msgs_gengo)
+add_dependencies(rosgo_tests_gengo std_msgs_gengo)
 
-rosgo_add_executable(test_listener)
-add_dependencies(test_listener rosgo_test_gengo)
+rosgo_add_executable(${PROJECT_NAME}_test_talker ${PROJECT_NAME}/test_talker
+                     DEPENDS rosgo_core_ros rosgo_tests_gengo)
 
-rosgo_add_executable(test_client)
-add_dependencies(test_client rosgo_test_gengo)
+rosgo_add_executable(${PROJECT_NAME}_test_listener ${PROJECT_NAME}/test_listener
+                     DEPENDS rosgo_core_ros rosgo_tests_gengo)
 
-rosgo_add_executable(test_server)
-add_dependencies(test_server rosgo_test_gengo)
+rosgo_add_executable(${PROJECT_NAME}_test_client ${PROJECT_NAME}/test_client
+                     DEPENDS rosgo_core_ros rosgo_tests_gengo)
 
-rosgo_add_executable(test_message)
-add_dependencies(test_message rosgo_test_gengo)
+rosgo_add_executable(${PROJECT_NAME}_test_server ${PROJECT_NAME}/test_server
+                     DEPENDS rosgo_core_ros rosgo_tests_gengo)
+
+rosgo_add_executable(${PROJECT_NAME}_test_message ${PROJECT_NAME}/test_message
+                     DEPENDS rosgo_core_ros rosgo_tests_gengo)
 
 
 #############

@@ -4,8 +4,9 @@ import (
     "fmt"
     "time"
     "ros"
-    "rosgo_tests"
+    rosgo_tests "rosgo_tests/gen"
 )
+
 
 func main() {
     node := ros.NewNode("/talker")

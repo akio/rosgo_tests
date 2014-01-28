@@ -3,12 +3,14 @@ package main
 import (
     "fmt"
     "ros"
-    "rosgo_tests"
+    rosgo_tests "rosgo_tests/gen"
 )
+
 
 func callback(msg *rosgo_tests.Hello) {
     fmt.Printf("Received: %s\n", msg.Data)
 }
+
 
 func main() {
     node := ros.NewNode("/listener")

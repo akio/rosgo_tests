@@ -4,7 +4,7 @@ import (
     "os"
     "fmt"
     "ros"
-    "rosgo_tests"
+    rosgo_tests "rosgo_tests/gen"
 )
 
 

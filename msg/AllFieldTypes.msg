@@ -17,6 +17,6 @@ float64 f64
 time t
 duration d
 string s
-std_msgs/ColorRGBA color
-int32[] dyn_array
-int32[2] fix_array
+std_msgs/ColorRGBA c
+int32[] dyn_ary
+int32[2] fix_ary

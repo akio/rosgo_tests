@@ -5,7 +5,7 @@ import (
     "fmt"
     "strconv"
     "ros"
-    "rosgo_tests"
+    rosgo_tests "rosgo_tests/gen"
 )
 
 
@@ -35,7 +35,7 @@ func main() {
         fmt.Println()
         os.Exit(1)
     }
-    var srv rosgo_tests.AddTwoInts 
+    var srv rosgo_tests.AddTwoInts
     srv.Request.A = int32(a)
     srv.Request.B = int32(b)
     if err := cli.Call(&srv); err != nil {
