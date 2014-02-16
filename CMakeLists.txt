@@ -84,7 +84,8 @@ catkin_package(
 #  DEPENDS system_lib
 )
 
-rosgo_setup()
+
+
 
 ###########
 ## Build ##
@@ -116,20 +117,20 @@ include_directories(
 
 add_dependencies(rosgo_tests_gengo std_msgs_gengo)
 
-rosgo_add_executable(${PROJECT_NAME}_test_talker ${PROJECT_NAME}/test_talker
-                     DEPENDS rosgo_core_ros rosgo_tests_gengo)
+rosgo_add_executable(${PROJECT_NAME}/test_talker
+                     DEPENDS rosgo_core rosgo_tests_gengo)
 
-rosgo_add_executable(${PROJECT_NAME}_test_listener ${PROJECT_NAME}/test_listener
-                     DEPENDS rosgo_core_ros rosgo_tests_gengo)
+rosgo_add_executable(${PROJECT_NAME}/test_listener
+                     DEPENDS rosgo_core rosgo_tests_gengo)
 
-rosgo_add_executable(${PROJECT_NAME}_test_client ${PROJECT_NAME}/test_client
-                     DEPENDS rosgo_core_ros rosgo_tests_gengo)
+rosgo_add_executable(${PROJECT_NAME}/test_client
+                     DEPENDS rosgo_core rosgo_tests_gengo)
 
-rosgo_add_executable(${PROJECT_NAME}_test_server ${PROJECT_NAME}/test_server
-                     DEPENDS rosgo_core_ros rosgo_tests_gengo)
+rosgo_add_executable(${PROJECT_NAME}/test_server
+                     DEPENDS rosgo_core rosgo_tests_gengo)
 
-rosgo_add_executable(${PROJECT_NAME}_test_message ${PROJECT_NAME}/test_message
-                     DEPENDS rosgo_core_ros rosgo_tests_gengo)
+rosgo_add_test(${PROJECT_NAME}/test_message
+               DEPENDS rosgo_core rosgo_tests_gengo)
 
 
 #############
