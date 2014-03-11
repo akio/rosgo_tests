@@ -3,7 +3,7 @@ package main
 import (
     "fmt"
     "ros"
-    rosgo_tests "rosgo_tests/gen"
+    "rosgo_tests"
 )
 
 

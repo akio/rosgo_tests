@@ -1,13 +1,12 @@
 package test_message
 
 import (
-//    "io"
     "bytes"
     "fmt"
     "testing"
     "ros"
-    std_msgs "std_msgs/gen"
-    rosgo_tests "rosgo_tests/gen"
+    "std_msgs"
+    "rosgo_tests"
 )
 
 
