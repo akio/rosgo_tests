@@ -120,7 +120,13 @@ add_dependencies(rosgo_tests_gengo std_msgs_gengo)
 rosgo_add_executable(${PROJECT_NAME}/test_talker
                      DEPENDS rosgo_core rosgo_tests_gengo)
 
+rosgo_add_executable(${PROJECT_NAME}/test_talker_with_callbacks
+                     DEPENDS rosgo_core rosgo_tests_gengo)
+
 rosgo_add_executable(${PROJECT_NAME}/test_listener
+                     DEPENDS rosgo_core rosgo_tests_gengo)
+
+rosgo_add_executable(${PROJECT_NAME}/test_listener_with_event
                      DEPENDS rosgo_core rosgo_tests_gengo)
 
 rosgo_add_executable(${PROJECT_NAME}/test_client
