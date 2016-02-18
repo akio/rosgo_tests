@@ -5,7 +5,7 @@ find_package(
   catkin REQUIRED
   COMPONENTS
     message_generation
-    rosgo_core
+    rosgo
     rospy
     std_msgs
 )
@@ -28,7 +28,7 @@ generate_messages(DEPENDENCIES std_msgs)
 
 
 catkin_package(
-  CATKIN_DEPENDS message_runtime rospy rosgo_core
+  CATKIN_DEPENDS message_runtime rospy rosgo
 )
 
 
