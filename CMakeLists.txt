@@ -6,7 +6,6 @@ find_package(
   COMPONENTS
     message_generation
     rosgo_core
-    rosgo_build_tools
     rospy
     std_msgs
 )
